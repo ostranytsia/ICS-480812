@@ -7,23 +7,16 @@ def get_move_mean():
         move_mean_list - список рядків файла
     """
 
-    move_mean_list = [
-        "Універсам 22;1;44 048,00;500,00;200,00",
-        "Дніпрянка;1;22 456,00;365,00;123,00",
-        "Універсам 22;2;5 564,00;2 571,00;135,00",
-        "Дніпрянка;2;10 087,00;15 972,00;58,00",
-        "Універсам 22;3;0,00;0,00;0,00",
-        "Дніпрянка;3;206,00;34,00;50,00",
-        "Універсам 22;4;116,00;64,00;23,00",
-        "Дніпрянка;4;34,00;23,00;25,00"
-    ]
+    with open('./data/move_means.txt', encoding="utf8") as move_mean_file:
+        move_mean_list = move_mean_file.readlines()
 
     # Накопичувач руху основних засобів
     move_mean_drive = []
 
     for line in move_mean_list:
         line_list = line.split(';')
-        move_mean_drive.append((line_list))
+        line_list[4] = line_list[4][:-1]  # Видаляє '\n' в кінці
+        move_mean_drive.append(line_list)
 
 
     return move_mean_drive
@@ -65,19 +58,16 @@ def get_dovidnik():
         dovidnik_list - список рядків файла
     """
 
-    dovidnik_list = [
-        "1;Будівлі",
-        "2;Машини та обладнання",
-        "3;Транспортні засоби",
-        "4;Інструмент та інвентар"
-    ]
+    with open('./data/dovidnik.txt', encoding="utf8") as dovidnik_file:
+        dovidnik_list = dovidnik_file.readlines()
 
     # Накопичувач довідника основних засобів
     dovidnik_drive = []
 
     for line in dovidnik_list:
         line_list = line.split(';')
-        dovidnik_drive.append((line_list))
+        line_list[1] = line_list[1][:-1]  # Видаляє '\n' в кінці
+        dovidnik_drive.append(line_list)
 
 
     return dovidnik_drive
