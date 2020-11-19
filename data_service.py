@@ -58,7 +58,7 @@ def get_dovidnik():
         dovidnik_list - список рядків файла
     """
 
-    with open('./data/dovidnik.txt', encoding="utf8") as dovidnik_file:
+    with open('./data/dovidniks.txt', encoding="utf8") as dovidnik_file:
         dovidnik_list = dovidnik_file.readlines()
 
     # Накопичувач довідника основних засобів
