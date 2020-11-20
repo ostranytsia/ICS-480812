@@ -15,7 +15,9 @@ def get_move_mean():
 
     for line in move_mean_list:
         line_list = line.split(';')
-        line_list[4] = line_list[4][:-1]  # Видаляє '\n' в кінці
+        line_list[2] = float(line_list[2])
+        line_list[3] = float(line_list[3])
+        line_list[4] = float(line_list[4])
         move_mean_drive.append(line_list)
 
 
@@ -46,8 +48,8 @@ def show_move_means(move_means):
         print("По Вашому запиту руху засобів нічого не знайдено.")
 
 
-move_means = get_move_mean()
-show_move_means(move_means)
+# move_means = get_move_mean()
+# show_move_means(move_means)
 
 
 
@@ -97,5 +99,5 @@ def show_dovidniks(dovidniks):
         print("По Вашому запиту довідникіка нічого не знайдено.")
 
 
-dovidniks = get_dovidnik()
-show_dovidniks(dovidniks)
+# dovidniks = get_dovidnik()
+# show_dovidniks(dovidniks)

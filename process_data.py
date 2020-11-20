@@ -8,10 +8,10 @@ from data_service import get_move_mean, get_dovidnik
 analysis = {
     'enterprise_name'   : '',    # Назва підприємства 
     'type_of_funs'      : '',    # Вид основних засобів
-    'remainder_2018'    : 0,   # Залишок на 01.01.2018
-    'received_2018'     : 0,   # Надійшло у 2018
-    'dropped_out_2018'  : 0,   # Вибуло у 2018
-    'remainder_2019'    : 0,   # Залишок на 01.01.2019
+    'remainder_2018'    : 0.0,   # Залишок на 01.01.2018
+    'received_2018'     : 0.0,   # Надійшло у 2018
+    'dropped_out_2018'  : 0.0,   # Вибуло у 2018
+    'remainder_2019'    : 0.0,   # Залишок на 01.01.2019
     'cost_changes'      : 0.0    # Зміни вартості за рік
 }
 
